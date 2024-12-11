@@ -6,12 +6,6 @@ import java.util.*;
 
 public class BankAccountManagementSystem {
     public static void main(String[] args){
-        int intData;  
-        char charData; 
-        intData=1;
-        charData = "a".charAt(0);
-        String str ="abc";
-
         BankAccountManagementSystem bams1 = new BankAccountManagementSystem();
         boolean createAC = bams1.createAccount(1, 1000.00);
         double deposit = bams1.deposit(1,20.00);
@@ -20,11 +14,6 @@ public class BankAccountManagementSystem {
         System.out.println("line 11: deposit = " + deposit);
         System.out.println("line 12: withdraw = " + withdraw + " Note: -1.0 =) amount <= 0, -2.0 =) amount>=balance, -3.0 amount==0 || balance==0");
         double balanceInstance = bams1.getAccountBalance(1);
-        System.out.println(intData + " is of type " + ((Object)intData).getClass().getSimpleName());  
-        System.out.println(charData + " is of type " + ((Object)charData).getClass().getSimpleName());  
-        System.out.println(str + " is of type " + str.getClass().getSimpleName());  
-
-
 
         System.out.println("line 14: balanceInstance = " + balanceInstance);
 
@@ -36,7 +25,6 @@ public class BankAccountManagementSystem {
 			System.out.println("declared field: " + fields[i]);
 		}
 
-
     }
     private Map<Integer, Double> accounts;
     public BankAccountManagementSystem() {
@@ -46,7 +34,6 @@ public class BankAccountManagementSystem {
         if(accounts.containsKey(accountNumber) || initialBalance < 0 ) {
             return false;
         }
-        System.out.println("line 24: intialBalance from inside createAccount method : " + initialBalance);
         accounts.put(accountNumber, initialBalance);
         return true;
     }
@@ -54,8 +41,6 @@ public class BankAccountManagementSystem {
         if (!accounts.containsKey(accountNumber)) {
             return -1.0;
         }
-        System.out.println("line 32: amount : from inside deposit method : " + amount);
-        System.out.println("line 33: accounts.get(accountNumber) from inside deposit method = " + accounts.get(accountNumber));
         double balance = accounts.get(accountNumber);
         balance += amount;
         accounts.put(accountNumber, balance);
@@ -65,8 +50,6 @@ public class BankAccountManagementSystem {
         if (!accounts.containsKey(accountNumber)) {
             return 0.0;
         }
-        System.out.println("line 43: accounts.get(accountNumber) from inside withdraw function : " + accounts.get(accountNumber));
-        System.out.println("line 44: accounts from inside withdraw function : " + accounts);
         double balance = accounts.get(accountNumber);
         if (amount<=0) {    
             return -1.0;    
@@ -83,8 +66,6 @@ public class BankAccountManagementSystem {
         double balance = 0;
     	System.out.println(accounts.get(accountNumber));
         balance = accounts.get(accountNumber);
-        System.out.println("in progress");
-        System.out.println("line 60 : balance in getAccountBalance method is : " + balance);
         return balance;
     }
 }

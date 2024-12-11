@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.example.TestSetup
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.035 s <<< FAILURE! -- in com.example.TestSetup
+com.example.TestSetup.test4 -- Time elapsed: 0.013 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.Map.get(Object)" is null
+	at com.example.BankAccountManagementSystem.getAccountBalance(BankAccountManagementSystem.java:43)
+	at com.example.TestSetup.test4(TestSetup.java:45)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

@@ -20,14 +20,6 @@ public class BankAccountManagementSystem {
         boolean createAC2 = bams1.createAccount(2, 100.00);
         boolean transfer = bams1.transfer(1,2,50.00);
         
-        BankAccountManagementSystem ft = new BankAccountManagementSystem();
-		Class ftClass = ft.getClass();
-
-		Field[] fields = ftClass.getDeclaredFields();
-		for (int i = 0; i < fields.length; i++) {
-			System.out.println("declared field: " + fields[i]);
-		}
-
     }
     private Map<Integer, Double> accounts;
     public BankAccountManagementSystem() {

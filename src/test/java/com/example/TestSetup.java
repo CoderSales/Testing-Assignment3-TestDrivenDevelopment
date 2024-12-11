@@ -68,7 +68,7 @@ class TestSetup {
 	@Test
 	void SavingsAccountCreationTest() {
 		BankAccountManagementSystem bankAccountManagementSystemSavingsAccountCreationTest = new BankAccountManagementSystem();
-		boolean savingsAccountCreatedActual = bankAccountManagementSystemSavingsAccountCreationTest.createSavingsAccount(3, 200.00, "savings");
+		boolean savingsAccountCreatedActual = bankAccountManagementSystemSavingsAccountCreationTest.createSavingsAccount(4, 300.00, "savings");
 		boolean savingsAccountCreatedExpected = true;
 		assertEquals(savingsAccountCreatedExpected, savingsAccountCreatedActual);
 

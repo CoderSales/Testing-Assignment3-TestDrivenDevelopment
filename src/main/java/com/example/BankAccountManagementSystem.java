@@ -81,7 +81,7 @@ public class BankAccountManagementSystem {
     }
     public boolean createSavingsAccount(int accountNumber, double amount, String accountType) {
     	if (accountType=="savings") {
-    		this.createAccount(4,300.00,"savings");
+    		this.createAccount(accountNumber,amount,accountType);
     		return true;
     	}
     	return false;

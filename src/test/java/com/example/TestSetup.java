@@ -74,7 +74,7 @@ class TestSetup {
 	}
 	
 	@Test
-	void CurrentAccountCreationgTest() {
+	void CurrentAccountCreationTest() {
 		BankAccountManagementSystem bankAccountManagementSystemCurrentAccountCreationTest = new BankAccountManagementSystem();
 		boolean currentAccountCreatedActual = bankAccountManagementSystemCurrentAccountCreationTest.createCurrentAccount(5, 200.00, "current");
 		boolean currentAccountCreatedExpected = true;

@@ -7,7 +7,7 @@ import java.util.*;
 public class BankAccountManagementSystem {
     public static void main(String[] args){
         BankAccountManagementSystem bams1 = new BankAccountManagementSystem();
-        boolean createAC = bams1.createAccount(1, 1000.00);
+        boolean createAC = bams1.createAccount(1, 1000.00, "current");
         double deposit = bams1.deposit(1,20.00);
         double withdraw=bams1.withdraw(1,30.00);
         System.out.println("line 10: createAC = " + createAC);
@@ -17,7 +17,7 @@ public class BankAccountManagementSystem {
 
         System.out.println("line 14: balanceInstance = " + balanceInstance);
         
-        boolean createAC2 = bams1.createAccount(2, 100.00);
+        boolean createAC2 = bams1.createAccount(2, 100.00, "current");
         boolean transfer = bams1.transfer(1,2,50.00);
         
     }
@@ -25,7 +25,13 @@ public class BankAccountManagementSystem {
     public BankAccountManagementSystem() {
         this.accounts = new HashMap<>();
     }
-    public boolean createAccount(int accountNumber, double initialBalance) {
+    public boolean createAccount(int accountNumber, double initialBalance, String accountType) {
+    	boolean savingsType;
+    	double interest;
+    	if(accountType=="savings") {
+    		savingsType = true;
+    		interest = 0.05;
+    	}
         if(accounts.containsKey(accountNumber) || initialBalance < 0 ) {
             return false;
         }
@@ -72,5 +78,12 @@ public class BankAccountManagementSystem {
     	double balanceTo = this.deposit(accountTo, amount);
     	System.out.println("€ " + amount + " transferred from account number: " + accountFrom + " to account number: " + accountTo);
     	return true;
+    }
+    public boolean createSavingsAccount(int accountNumber, double amount, String accountType) {
+    	if (accountType=="savings") {
+    		this.createAccount(4,300.00,"savings");
+    		return true;
+    	}
+    	return false;
     }
 }

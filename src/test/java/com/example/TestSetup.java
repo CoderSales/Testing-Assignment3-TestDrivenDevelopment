@@ -16,7 +16,7 @@ class TestSetup {
 	void test() {
 		BankAccountManagementSystem bankAccountManagementSystem = new BankAccountManagementSystem();
 		boolean expected = true;
-		boolean actual = bankAccountManagementSystem.createAccount(1, 20.00);
+		boolean actual = bankAccountManagementSystem.createAccount(1, 20.00, "current");
 		assertEquals(expected, actual);
 	}
 	
@@ -39,7 +39,7 @@ class TestSetup {
 	@Test
 	void test4() {
 		BankAccountManagementSystem bankAccountManagementSystem4 = new BankAccountManagementSystem();
-		bankAccountManagementSystem4.createAccount(1, 1000.00);
+		bankAccountManagementSystem4.createAccount(1, 1000.00, "current");
 		bankAccountManagementSystem4.deposit(1,20.00);
 		bankAccountManagementSystem4.withdraw(1,30.00);
 		double expected4 = 990.0;
@@ -50,11 +50,11 @@ class TestSetup {
 	@Test
 	void TestTransfer() {
 		BankAccountManagementSystem bankAccountManagementSystemTestTransfer = new BankAccountManagementSystem();
-		bankAccountManagementSystemTestTransfer.createAccount(1, 1000.00);
+		bankAccountManagementSystemTestTransfer.createAccount(1, 1000.00, "current");
 		bankAccountManagementSystemTestTransfer.deposit(1,20.00);
 		bankAccountManagementSystemTestTransfer.withdraw(1,30.00);
 
-		boolean createAC2 = bankAccountManagementSystemTestTransfer.createAccount(2, 100.00);
+		boolean createAC2 = bankAccountManagementSystemTestTransfer.createAccount(2, 100.00, "current");
         // boolean transfer = bankAccountManagementSystemTestTransfer.transfer(1,2,50.00);
 
 		int accountFrom = 1;
@@ -65,4 +65,12 @@ class TestSetup {
 		assertEquals(expectedTestTransfer, actualTestTransfer);
 	}
 	
+	@Test
+	void SavingsAccountCreationTest() {
+		BankAccountManagementSystem bankAccountManagementSystemSavingsAccountCreationTest = new BankAccountManagementSystem();
+		boolean savingsAccountCreatedActual = bankAccountManagementSystemSavingsAccountCreationTest.createSavingsAccount(3, 200.00, "savings");
+		boolean savingsAccountCreatedExpected = true;
+		assertEquals(savingsAccountCreatedExpected, savingsAccountCreatedActual);
+
+	}
 }

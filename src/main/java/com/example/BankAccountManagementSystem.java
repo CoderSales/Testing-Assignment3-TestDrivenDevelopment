@@ -20,9 +20,6 @@ public class BankAccountManagementSystem {
         System.out.println("line 11: deposit = " + deposit);
         System.out.println("line 12: withdraw = " + withdraw + " Note: -1.0 =) amount <= 0, -2.0 =) amount>=balance, -3.0 amount==0 || balance==0");
         double balanceInstance = bams1.getAccountBalance(1);
-        //Field field = BankAccountManagementSystem.class.getField("balance");
-        //bams1.balance.getField("balance");
-        //System.out.println((Object)intData).getClass().getSimpleName());
         System.out.println(intData + " is of type " + ((Object)intData).getClass().getSimpleName());  
         System.out.println(charData + " is of type " + ((Object)charData).getClass().getSimpleName());  
         System.out.println(str + " is of type " + str.getClass().getSimpleName());  
@@ -30,7 +27,6 @@ public class BankAccountManagementSystem {
 
 
         System.out.println("line 14: balanceInstance = " + balanceInstance);
-        // Field nameField = BankAccountManagementSystem.class.getField("balance");  
 
         BankAccountManagementSystem ft = new BankAccountManagementSystem();
 		Class ftClass = ft.getClass();

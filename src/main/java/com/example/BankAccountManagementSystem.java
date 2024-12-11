@@ -86,4 +86,11 @@ public class BankAccountManagementSystem {
     	}
     	return false;
     }
+    public boolean createCurrentAccount(int accountNumber, double amount, String accountType) {
+    	if (accountType=="current") {
+    		this.createAccount(accountNumber, amount, accountType);
+    		return true;
+    	}
+    	return false;
+    }
 }

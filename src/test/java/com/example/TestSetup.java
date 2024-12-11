@@ -71,6 +71,13 @@ class TestSetup {
 		boolean savingsAccountCreatedActual = bankAccountManagementSystemSavingsAccountCreationTest.createSavingsAccount(4, 300.00, "savings");
 		boolean savingsAccountCreatedExpected = true;
 		assertEquals(savingsAccountCreatedExpected, savingsAccountCreatedActual);
-
+	}
+	
+	@Test
+	void CurrentAccountCreationgTest() {
+		BankAccountManagementSystem bankAccountManagementSystemCurrentAccountCreationTest = new BankAccountManagementSystem();
+		boolean currentAccountCreatedActual = bankAccountManagementSystemCurrentAccountCreationTest.createCurrentAccount(5, 200.00, "current");
+		boolean currentAccountCreatedExpected = true;
+		assertEquals(currentAccountCreatedExpected,currentAccountCreatedActual);
 	}
 }

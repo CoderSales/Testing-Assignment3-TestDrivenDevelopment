@@ -16,7 +16,10 @@ public class BankAccountManagementSystem {
         double balanceInstance = bams1.getAccountBalance(1);
 
         System.out.println("line 14: balanceInstance = " + balanceInstance);
-
+        
+        boolean createAC2 = bams1.createAccount(2, 100.00);
+        boolean transfer = bams1.transfer(1,2,50.00);
+        
         BankAccountManagementSystem ft = new BankAccountManagementSystem();
 		Class ftClass = ft.getClass();
 
@@ -67,5 +70,15 @@ public class BankAccountManagementSystem {
     	System.out.println(accounts.get(accountNumber));
         balance = accounts.get(accountNumber);
         return balance;
+    }
+    public boolean transfer(int accountFrom, int accountTo, double amount) {
+    	if(amount>this.getAccountBalance(accountFrom)) {
+    		System.out.println("Insufficient funds for transfer.");
+    		return false;
+    	}
+    	double balanceFrom = this.withdraw(accountFrom, amount);
+    	double balanceTo = this.deposit(accountTo, amount);
+    	System.out.println("€ " + amount + " transferred from account number: " + accountFrom + " to account number: " + accountTo);
+    	return true;
     }
 }

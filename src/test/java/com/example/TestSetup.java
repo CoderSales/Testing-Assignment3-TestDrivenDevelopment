@@ -47,5 +47,22 @@ class TestSetup {
 		double actual4 = bankAccountManagementSystem4.getAccountBalance(1);
 		assertEquals(expected4, actual4);
 	}
+	@Test
+	void TestTransfer() {
+		BankAccountManagementSystem bankAccountManagementSystemTestTransfer = new BankAccountManagementSystem();
+		bankAccountManagementSystemTestTransfer.createAccount(1, 1000.00);
+		bankAccountManagementSystemTestTransfer.deposit(1,20.00);
+		bankAccountManagementSystemTestTransfer.withdraw(1,30.00);
+
+		boolean createAC2 = bankAccountManagementSystemTestTransfer.createAccount(2, 100.00);
+        // boolean transfer = bankAccountManagementSystemTestTransfer.transfer(1,2,50.00);
+
+		int accountFrom = 1;
+		int accountTo = 2;
+		double amount = 50.00;
+		boolean actualTestTransfer = bankAccountManagementSystemTestTransfer.transfer(accountFrom, accountTo, amount);
+		boolean expectedTestTransfer = true;
+		assertEquals(expectedTestTransfer, actualTestTransfer);
+	}
 	
 }
